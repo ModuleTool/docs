@@ -74,7 +74,7 @@
 
 ### Run Prototype
 
-+ SELECT query on Implementation table to get the the list of modules necessary to generate the network of modules
++ SELECT query on **Implementation** table to get the the list of **Components** necessary to deploy the code
 
 
 ### Customer usage
