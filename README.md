@@ -8,7 +8,10 @@
 
 + Expectation
   + id
+  + parent_id
   + description
+  + user_id:
+  + role: customer, manager
 
 + Requirements
   + id
