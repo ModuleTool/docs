@@ -4,7 +4,7 @@
 
 ## DB structure  
 
-### Prototype
+### Service Specification
 
 + Expectation
   + id
@@ -16,49 +16,72 @@
 + Requirements
   + id
   + description
-  + input
-    + object_type: domain, url, host, 
-    + object_format: file, class, function, url
-  + output
-    + object_type: domain, url, host, 
-    + object_format: file, class, function, url
-
-+ Module
+  + input: Model
+  + output: Model
+    
++ Component
   + id  
   + parent_id
-  + language: php, js, java
-  + format: file, class, function, url
+  + object_type: file, class, function, url
   + value
 
 + Implementation
   + Expectation_id
   + Requirements_id
-  + Module_id
+  + Component_id
   + Stage: prototype, local, test, production
 
+
   
-### Service
+### Service Implementation
 
 + Object
+  + id
+  + parent_id
+  + value    
   + Type: domain, url, host, 
-  + Format: json, html, yaml, text, string, integer, bool
-+ View
-+ Query  
+  
++ Query
+  + input: Statement_id    
+  + output: view_id
+  
+
+
+### Adapter API
+
+
++ Model
+  + object_name: domain, url, host, 
+  + object_type: file, class, function, url
+  + object_format: json, html, yaml, text, string, integer, bool
+  + position
+
+    
++ Statement
+  + SQL
+  + URI
+  + PARAMS
 
 
 
 ## How to use?
 
-Build Prototype
+### Build Prototype
 + Preparing specification based on customer **expectations**
 + Creating **Requirements** based on customer **expectations**
-+ Creating **Modules** based on **Requirements** defined based on the customer **expectations**
++ Creating **Component** based on **Requirements** defined based on the customer **expectations**
 
-Run Prototype
+
+### Run Prototype
+
 + SELECT query on Implementation table to get the the list of modules necessary to generate the network of modules
 
-Customer usage
-+ SELECT QUERY on VIEW through saved QUERY to get the DATA Object
+
+### Customer usage
+
++ ask for **Object** through select query
++ INSERT the question to **Query**
++ as output show the thete through **View** template
   
 
 ---
