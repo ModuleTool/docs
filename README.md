@@ -68,6 +68,7 @@ Service-based component management tools
   + SQL
   + URI
   + PARAMS
+  + description
 
 
 
