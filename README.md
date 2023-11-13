@@ -1,6 +1,8 @@
 # docs.ModuleTool.com
 
-## Service-based component management tools
++ Service-based component management tools
+
+## DB structure  
 
 ### Prototype
 
@@ -12,13 +14,15 @@
   + id
   + description
   + input
-    + type: domain, url, host, 
-    + format: file, class, function, url
+    + object_type: domain, url, host, 
+    + object_format: file, class, function, url
   + output
-    + type: domain, url, host, 
-    + format: file, class, function, url
+    + object_type: domain, url, host, 
+    + object_format: file, class, function, url
 
-+ Module  
++ Module
+  + id  
+  + parent_id
   + language: php, js, java
   + format: file, class, function, url
   + value
@@ -27,6 +31,7 @@
   + Expectation_id
   + Requirements_id
   + Module_id
+  + Stage: prototype, local, test, production
 
   
 ### Service
@@ -38,6 +43,20 @@
 + Query  
 
 
+
+## How to use?
+
+Build Prototype
++ Preparing specification based on customer **expectations**
++ Creating **Requirements** based on customer **expectations**
++ Creating **Modules** based on **Requirements** defined based on the customer **expectations**
+
+Run Prototype
++ SELECT query on Implementation table to get the the list of modules necessary to generate the network of modules
+
+Customer usage
++ SELECT QUERY on VIEW through saved QUERY to get the DATA Object
+  
 
 ---
 + [edit](https://github.com/ModuleTool/docs/edit/main/README.md)
