@@ -25,18 +25,19 @@ Service-based component management tools
   + parent_id
   + object_type: file, class, function, url
   + value
-  
-+ Implementation
-  + Expectation_id
-  + Requirements_id
-  + Component_id
-  + Stage: prototype, local, test, production
 
 + Environment
   + type: local, remote, vm  
   + object_type: file, class, function, url
   + value
 
+  
++ Implementation
+  + Expectation_id
+  + Requirements_id
+  + Component_id
+  + Environment_id
+  + Stage: prototype, local, test, production
 
   
 ### Service Implementation
