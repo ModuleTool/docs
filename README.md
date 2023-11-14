@@ -5,6 +5,8 @@ Service-based component management tools
 
 ## DB structure  
 
+![db strcuture](img/db_structure.png)
+
 ### Service Specification
 
 + Expectation
@@ -21,18 +23,20 @@ Service-based component management tools
   + output: Model
     
 + Component
-  + id  
+  + id
   + parent_id
   + object_type: file, class, function, url
   + value
 
 + Environment
+  + id
   + type: local, remote, vm  
   + object_type: file, class, function, url
   + value
 
   
 + Implementation
+  + id
   + Expectation_id
   + Requirements_id
   + Component_id
@@ -49,6 +53,7 @@ Service-based component management tools
   + Type: domain, url, host, 
   
 + Query
+  + id
   + input: Statement_id    
   + output: view_id
   
@@ -58,6 +63,7 @@ Service-based component management tools
 
 
 + Model
+  + id
   + object_name: domain, url, host, 
   + object_type: file, class, function, url
   + object_format: json, html, yaml, text, string, integer, bool
@@ -65,10 +71,12 @@ Service-based component management tools
 
     
 + Statement
+  + id
   + SQL
   + URI
   + PARAMS
   + description
+
 
 
 
