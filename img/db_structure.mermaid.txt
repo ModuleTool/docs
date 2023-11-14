@@ -1,0 +1,70 @@
+erDiagram
+  EXPECTATION ||--o{ REQUIREMENT : has
+  EXPECTATION {
+      int id PK 
+      int parent_id FK
+      string description
+      int user_id
+      string role "customer, manager"
+  }
+  REQUIREMENT {
+      int id
+      string description
+      string input "Model"
+      string output "Model"
+  }
+  COMPONENT {
+      int id PK
+      int parent_id FK
+      string object_type "file, class, function, url"
+      string value
+  }
+  ENVIRONMENT {
+      int id PK
+      string type "local, remote, vm"
+      string object_type "file, class, function, url"
+      string value
+  }
+  IMPLEMENTATION {
+      int id PK
+      int expectation_id FK
+      int requirement_id FK
+      int component_id FK
+      int environment_id FK
+      string stage "prototype, local, test, production"
+  }
+  OBJECT {
+      int id PK
+      int parent_id FK
+      string value
+      string type "domain, url, host"
+  }
+  QUERY {
+      int id
+      int input FK
+      int output FK
+  }
+  MODEL {
+      int id PK
+      string object_name "domain, url, host"
+      string object_type "file, class, function, url"
+      string object_format "json, html, yaml, text, string, integer, bool"
+      int position
+  }
+  STATEMENT {
+      int id PK
+      string SQL
+      string URI
+      string PARAMS
+      string description
+  }
+
+  IMPLEMENTATION ||--o{ EXPECTATION : fulfills
+  IMPLEMENTATION ||--o{ REQUIREMENT : realizes
+  IMPLEMENTATION ||--o{ COMPONENT : uses
+  IMPLEMENTATION ||--o{ ENVIRONMENT : runs_in
+
+  QUERY ||--o{ STATEMENT : defined_by
+  QUERY ||--o{ MODEL : produces
+  COMPONENT ||--o{ MODEL : defined_by
+  OBJECT ||--|| COMPONENT : instance_of
