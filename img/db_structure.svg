@@ -1,0 +1,22 @@
+#mermaid-svg{font-family:"trebuchet
+ms",verdana,arial,sans-serif;font-size:16px;fill:#333;}#mermaid-svg
+.error-icon{fill:#552222;}#mermaid-svg
+.error-text{fill:#552222;stroke:#552222;}#mermaid-svg
+.edge-thickness-normal{stroke-width:2px;}#mermaid-svg
+.edge-thickness-thick{stroke-width:3.5px;}#mermaid-svg
+.edge-pattern-solid{stroke-dasharray:0;}#mermaid-svg
+.edge-pattern-dashed{stroke-dasharray:3;}#mermaid-svg
+.edge-pattern-dotted{stroke-dasharray:2;}#mermaid-svg
+.marker{fill:#333333;stroke:#333333;}#mermaid-svg
+.marker.cross{stroke:#333333;}#mermaid-svg svg{font-family:"trebuchet
+ms",verdana,arial,sans-serif;font-size:16px;}#mermaid-svg
+.entityBox{fill:#ECECFF;stroke:#9370DB;}#mermaid-svg
+.attributeBoxOdd{fill:#ffffff;stroke:#9370DB;}#mermaid-svg
+.attributeBoxEven{fill:#f2f2f2;stroke:#9370DB;}#mermaid-svg
+.relationshipLabelBox{fill:hsl(80, 100%,
+96.2745098039%);opacity:0.7;background-color:hsl(80, 100%,
+96.2745098039%);}#mermaid-svg .relationshipLabelBox
+rect{opacity:0.5;}#mermaid-svg
+.relationshipLine{stroke:#333333;}#mermaid-svg
+.entityTitleText{text-anchor:middle;font-size:18px;fill:#333;}#mermaid-svg #MD_PARENT_START{fill:#f5f5f5!important;stroke:#333333!important;stroke-width:1;}#mermaid-svg #MD_PARENT_END{fill:#f5f5f5!important;stroke:#333333!important;stroke-width:1;}#mermaid-svg :root{--mermaid-font-family:"trebuchet ms",verdana,arial,sans-serif;}EXPECTATIONintidPKintparent_idFKstringdescriptionintuser_idstringrolecustomer, managerREQUIREMENTintidstringdescriptionstringinputModelstringoutputModelCOMPONENTintidPKintparent_idFKstringobject_typefile, class, function, urlstringvalueENVIRONMENTintidPKstringtypelocal, remote, vmstringobject_typefile, class, function, urlstringvalueIMPLEMENTATIONintidPKintexpectation_idFKintrequirement_idFKintcomponent_idFKintenvironment_idFKstringstageprototype, local, test, productionOBJECTintidPKintparent_idFKstringvaluestringtypedomain, url, hostQUERYintidintinputFKintoutputFKMODELintidPKstringobject_namedomain, url, hoststringobject_typefile, class, function, urlstringobject_formatjson, html, yaml, text, string, integer, boolintpositionSTATEMENTintidPKstringSQLstringURIstringPARAMSstringdescriptionhasfulfillsrealizesusesruns_indefined_byproducesdefined_byinstance_of@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
+
