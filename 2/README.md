@@ -4,7 +4,7 @@
 
 This diagram uses classDiagram to provide a visual representation of your data model and the relationships between entities. Each class has its attributes listed and relationships are represented by lines with varying types of connectors to indicate the nature of the relationship (e.g., composition, association).
 
-![db strcuture](db_structure_2.png)
+![dbstrcuture](db_structure_2.png)
 
 
 ### Specification
