@@ -95,3 +95,10 @@
 + ask for **Object** through select query
 + INSERT the question to **Query**
 + as output show the thete through **View** template
+
+
+
+---
+
++ [edit](https://github.com/ModuleTool/docs/edit/main/1/README.md)
++ [git](https://github.com/ModuleTool/docs/)
