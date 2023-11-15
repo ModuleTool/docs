@@ -94,3 +94,9 @@ try{
     // logs messages
 }
 ```
+
+
+---
+
++ [edit](https://github.com/ModuleTool/docs/edit/main/2/README.md)
++ [git](https://github.com/ModuleTool/docs/)
