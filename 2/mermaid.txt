@@ -1,0 +1,86 @@
+classDiagram
+
+class Expectation {
+  - id
+  - description
+  - role: customer, manager
+}
+
+class Requirement {
+  - id
+  - description
+}
+
+class DataModel {
+  - id
+  - language: php, js, python
+  - name: domain, url, host
+  - type: file, class, function, url
+  - format: json, html, yaml, text, string, integer, bool
+}
+
+class Documentation {
+  - Expectation_id
+  - Requirement_id
+  - Description
+  - input: DataModel
+  - output: DataModel
+}
+
+class Component {
+  - id
+  - type: file, class, function, url
+  - input: DataModel
+  - output: DataModel
+  - comments
+  - autor
+}
+
+class Implementation {
+  - id
+  - Documentation_id
+  - Component_id
+  - Stage: prototype, local, test, production
+}
+
+class Deployment {
+  - input_value: DataValue
+  - output_value: DataValue
+  - input_type: DataModel
+  - output_type: DataModel
+  - Component_id: Component
+  - Environment_id: Environment
+}
+
+class Environment {
+  - id
+  - type: local, remote, vm
+  - configuration: docker, docker-compose
+  - volume
+  - service
+  - Stage: prototype, local, test, production
+}
+
+class DataValue {
+  // Here you should define the structure of DataValue if needed
+}
+
+class Logs {
+  - id
+  - Deployment_id
+  - SQL
+  - URI
+  - PARAMS
+  - description
+}
+
+Expectation "1" *-- "1" Documentation : has
+Requirement "1" -- "many" Documentation : describes
+Component "1" -- "1" Implementation : has
+DataModel "1" .. "many" Documentation : describes input-output
+DataModel "1" .. "many" Component : defines input-output
+DataModel "1" o-- "many" Implementation : used by
+Documentation "1" -- "1" Implementation : documents
+Deployment "1" -- "1" Component : uses
+Deployment "1" -- "1" Environment : deployed on
+Logs "1" -- "1" Deployment : tracks
