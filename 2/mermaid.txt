@@ -22,9 +22,8 @@ class DataModel {
 class Documentation {
   - Expectation_id
   - Requirement_id
-  - Description
-  - input: DataModel
-  - output: DataModel
+  - TestData_id
+  - Description: string
 }
 
 class Component {
@@ -32,24 +31,24 @@ class Component {
   - type: file, class, function, url
   - input: DataModel
   - output: DataModel
-  - comments
-  - autor
+  - comments: string
+  - license: string
+  - autor: string
 }
 
-class Implementation {
+class TestData {
   - id
-  - Documentation_id
-  - Component_id
-  - Stage: prototype, local, test, production
-}
-
-class Deployment {
   - input_value: DataValue
   - output_value: DataValue
   - input_type: DataModel
   - output_type: DataModel
-  - Component_id: Component
-  - Environment_id: Environment
+}
+
+class DataValue {
+  - id
+  - type
+  - value
+  - format
 }
 
 class Environment {
@@ -61,26 +60,27 @@ class Environment {
   - Stage: prototype, local, test, production
 }
 
-class DataValue {
-  // Here you should define the structure of DataValue if needed
+class Deployment {
+  - id
+  - Component_id: Component
+  - Environment_id: Environment
+  - Documentation_id
+  - Stage: prototype, local, test, production
 }
 
 class Logs {
   - id
   - Deployment_id
-  - SQL
-  - URI
-  - PARAMS
-  - description
+  - Message
 }
 
 Expectation "1" *-- "1" Documentation : has
 Requirement "1" -- "many" Documentation : describes
-Component "1" -- "1" Implementation : has
-DataModel "1" .. "many" Documentation : describes input-output
-DataModel "1" .. "many" Component : defines input-output
-DataModel "1" o-- "many" Implementation : used by
-Documentation "1" -- "1" Implementation : documents
-Deployment "1" -- "1" Component : uses
-Deployment "1" -- "1" Environment : deployed on
-Logs "1" -- "1" Deployment : tracks
+TestData "1" -- "many" Documentation : contains
+Component "1" .. "*" Deployment : deployed in
+DataModel "1" .. "many" TestData : validated by
+DataModel "1" -- "many" Component : defines input-output
+DataValue "1" -- "many" TestData : used as
+Environment "1" -- "many" Deployment : hosts
+Documentation "1" -- "1" Deployment : documents
+Deployment "1" -- "many" Logs : generates
