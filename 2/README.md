@@ -31,9 +31,9 @@ This diagram uses classDiagram to provide a visual representation of your data m
 ### Implementation
 
 + Documentation
-    + Expectation_id: one
-    + Requirement_id: many
-    + TestData_id: many
+    + Expectation: one
+    + Requirement: many
+    + TestData: many
     + Description: string    
 
 + Component
@@ -45,6 +45,14 @@ This diagram uses classDiagram to provide a visual representation of your data m
     + license: string
     + autor: string
 
+
++ DataValue
+    + id
+    + type
+    + value
+    + format
+
+      
 + TestData
     + id
     + input_value: DataValue
@@ -52,11 +60,6 @@ This diagram uses classDiagram to provide a visual representation of your data m
     + input_type: DataModel
     + output_type: DataModel
 
-+ DataValue
-    + id
-    + type
-    + value
-    + format
 
 
 ### Iteration
@@ -73,10 +76,9 @@ This diagram uses classDiagram to provide a visual representation of your data m
       
 + Deployment
     + id    
-    + Component_id: Component
-    + Environment_id: Environment
-    + Documentation_id: one
-    + Component_id: many
+    + Documentation: one
+    + Component: many
+    + Environment: many     
     + Stage: prototype, local, test, production
     
       
@@ -84,7 +86,7 @@ This diagram uses classDiagram to provide a visual representation of your data m
 
  + Logs
     + id
-    + Deployment_id
+    + Deployment: one
     + Message
     
 
