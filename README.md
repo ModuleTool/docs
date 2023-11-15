@@ -3,8 +3,8 @@ Service-based component management tools
 + [www.ModuleTool.com](http://www.ModuleTool.com)
 
 
-+ [hi level solution](1/README.md)
-+ [low level solution](2/README.md)
++ [hi level solution](1/)
++ [low level solution](2/)
   
 
 ---
