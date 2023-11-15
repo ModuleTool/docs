@@ -36,30 +36,30 @@ line{stroke:#9370DB;stroke-width:1;}#mermaid-svg .classLabel
 describes
 1
 many
-has
+contains
 1
+many
+deployed in
 1
-describes input-output
+*
+validated by
 1
 many
 defines input-output
 1
 many
-used by
+used as
+1
+many
+hosts
 1
 many
 documents
 1
 1
-uses
+generates
 1
-1
-deployed on
-1
-1
-tracks
-1
-1
+many
 Expectation
 - id
 - description
@@ -76,28 +76,27 @@ DataModel
 Documentation
 - Expectation_id
 - Requirement_id
-- Description
-- input: DataModel
-- output: DataModel
+- TestData_id
+- Description: string
 Component
 - id
 - type: file, class, function, url
 - input: DataModel
 - output: DataModel
-- comments
-- autor
-Implementation
+- comments: string
+- license: string
+- autor: string
+TestData
 - id
-- Documentation_id
-- Component_id
-- Stage: prototype, local, test, production
-Deployment
 - input_value: DataValue
 - output_value: DataValue
 - input_type: DataModel
 - output_type: DataModel
-- Component_id: Component
-- Environment_id: Environment
+DataValue
+- id
+- type
+- value
+- format
 Environment
 - id
 - type: local, remote, vm
@@ -105,15 +104,16 @@ Environment
 - volume
 - service
 - Stage: prototype, local, test, production
-DataValue
-// Here you should define the structure of DataValue if needed
+Deployment
+- id
+- Component_id: Component
+- Environment_id: Environment
+- Documentation_id
+- Stage: prototype, local, test, production
 Logs
 - id
 - Deployment_id
-- SQL
-- URI
-- PARAMS
-- description
+- Message
 @import
 url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css");
 
