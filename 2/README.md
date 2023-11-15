@@ -52,7 +52,7 @@ This diagram uses classDiagram to provide a visual representation of your data m
     + input_type: DataModel
     + output_type: DataModel
 
-DataValue
++ DataValue
     + id
     + type
     + value
