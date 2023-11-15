@@ -28,43 +28,40 @@ This diagram uses classDiagram to provide a visual representation of your data m
 
 
 
-
 ### Implementation
 
 + Documentation
     + Expectation_id: one
     + Requirement_id: many
-    + Description
-    + input: DataModel
-    + output: DataModel
+    + TestData_id: many
+    + Description: string    
 
 + Component
     + id  
     + type: file, class, function, url
     + input: DataModel
     + output: DataModel
-    + comments
-    + autor
+    + comments: string
+    + license: string
+    + autor: string
 
-
-+ Implementation
++ TestData
     + id
-    + Documentation_id: one
-    + Component_id: many
-    + Stage: prototype, local, test, production
-
-
-
-### Iteration
-
-+ Deployment
     + input_value: DataValue
     + output_value: DataValue
     + input_type: DataModel
     + output_type: DataModel
-    + Component_id: Component
-    + Environment_id: Environment
-    
+
+DataValue
+    + id
+    + type
+    + value
+    + format
+
+
+### Iteration
+
+
 + Environment
     + id
     + type: local, remote, vm  
@@ -73,20 +70,27 @@ This diagram uses classDiagram to provide a visual representation of your data m
     + service
     + Stage: prototype, local, test, production
 
-
+      
++ Deployment
+    + id    
+    + Component_id: Component
+    + Environment_id: Environment
+    + Documentation_id: one
+    + Component_id: many
+    + Stage: prototype, local, test, production
+    
+      
 ## Monitoring
 
  + Logs
     + id
     + Deployment_id
-    + SQL
-    + URI
-    + PARAMS
-    + description
-
+    + Message
+    
 
 
 ## Iteration
+
 ```php
 try{
     // component
