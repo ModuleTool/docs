@@ -2,9 +2,12 @@
 
 ## DB structure
 
+This diagram uses classDiagram to provide a visual representation of your data model and the relationships between entities. Each class has its attributes listed and relationships are represented by lines with varying types of connectors to indicate the nature of the relationship (e.g., composition, association).
+
 ![db strcuture](db_structure.png)
 
-### Service Specification
+
+### Specification
 
 + Expectation
     + id  
@@ -14,9 +17,6 @@
 + Requirement
     + id
     + description
-    + input: DataModel
-    + output: DataModel
-
 
 + DataModel
     + id
@@ -26,10 +26,17 @@
     + format: json, html, yaml, text, string, integer, bool    
 
 
+
+
+
+### Implementation
+
 + Documentation
     + Expectation_id: one
     + Requirement_id: many
-
+    + Description
+    + input: DataModel
+    + output: DataModel
 
 + Component
     + id  
@@ -40,14 +47,15 @@
     + autor
 
 
-
-### Implementation
-
 + Implementation
     + id
     + Documentation_id: one
     + Component_id: many
     + Stage: prototype, local, test, production
+
+
+
+### Iteration
 
 + Deployment
     + input_value: DataValue
@@ -57,18 +65,16 @@
     + Component_id: Component
     + Environment_id: Environment
     
-
-
-  
-### Environment
-
 + Environment
-  + id
-  + type: local, remote, vm  
-  + configuration: docker, docker-comopse
-  + volume
-  + service
-  + Stage: prototype, local, test, production
+    + id
+    + type: local, remote, vm  
+    + configuration: docker, docker-comopse
+    + volume
+    + service
+    + Stage: prototype, local, test, production
+
+
+## Monitoring
 
  + Logs
     + id
