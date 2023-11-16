@@ -156,10 +156,14 @@ User can work on terminal with command line and markdown editor for documentatio
 + Components
     + 1/
         + component.py
+        + install.sh
+        + run.sh
         + README.md
         + licence.txt
     + 2/
         + component.php
+        + install.sh
+        + run.sh
         + README.md
         + licence.txt
             
