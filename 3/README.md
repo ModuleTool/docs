@@ -237,6 +237,63 @@ function iteration(DataModel $test_input, DataModel $test_output, $component)
 }
 ```
 
+---
+
+### Python with SQLite
+```python
+import sqlite3
+
+conn = sqlite3.connect('example.db')
+cursor = conn.cursor()
+
+# Execute a query
+cursor.execute('SELECT * FROM tablename')
+
+# Commit if it's a write operation
+conn.commit()
+
+# Close the connection
+conn.close()
+```
+
+### Python with MySQL using `mysql-connector-python`
+```python
+import mysql.connector
+
+cnx = mysql.connector.connect(user='username', password='password',
+                              host='127.0.0.1',
+                              database='mydatabase')
+
+cursor = cnx.cursor()
+
+query = "SELECT * FROM tablename"
+cursor.execute(query)
+
+# For write operations
+cnx.commit()
+
+cursor.close()
+cnx.close()
+```
+
+### Python with PostgreSQL using `psycopg2`
+```python
+import psycopg2
+
+conn = psycopg2.connect("dbname='mydatabase' user='username' host='localhost' password='password'")
+
+cursor = conn.cursor()
+
+cursor.execute("SELECT * FROM tablename")
+
+# For write operations
+conn.commit()
+
+cursor.close()
+conn.close()
+```
+
+
 ----
 
 ```php
