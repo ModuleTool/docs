@@ -152,12 +152,88 @@ User can work on terminal with command line and markdown editor for documentatio
 
 ## Iteration
 
+
+
 ```php
+
+DataModel function testComponent(DataModel $input) {
+    return DataModel $output;
+}
+
+bool function testDataOuptut(DataModel $test_output, DataModel $real_output){
+    throw Exception('NotEqual')
+    return true
+}
+
+
 try{
+    // data preparation
+    $test_input = new DataModel(type,value)
+    $test_output = new DataModel(type,value)
+    // test component    
+    $real_output = testComponent($test_input)
+    // test output
+    testDataOuptut($test_output, $real_output)
+}catch e {
+    // logs messages
+    new Logs(serialize($test_input), serialize($test_output), serialize(testComponent), str($e->getMessage()))
+}
+```
+
+----
+
+```php
+
+class TestData(
+    private input;
+    private output;
+
+    function __construct(input, output){
+        $this->input = input;
+        $this->output = output;
+    }
+)
+
+DataModel function testComponent($input) {
+    return $output;
+}
+
+bool function testDataOuptut(DataModel $test_output, DataModel $real_output){
+    return 
+}
+
+try{
+    // data
+    $data = new TestData(
+            new DataModel(type,value)
+            new DataModel(type,value)
+        )
+    $test_input = new DataModel(type,value)
     // component
+    #$output = Component($data->input)
+    $output = Component($test_input)
+
+    DataComparasion$output
 }catch e {
     // logs messages
 }
+
+try{
+    // data
+    $data = new TestData(
+            new DataModel(type,value)
+            new DataModel(type,value)
+    )
+    $test_input = new DataModel(type,value)
+    // component    
+    $output = Component($test_input)
+
+    DataComparasion$output
+}catch e {
+    // logs messages
+}
+
+
 ```
 
 
