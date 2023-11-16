@@ -165,9 +165,11 @@ array findComponentByDataModule(codeList, testModuleList){
     foreach(){
         
         $component = new Component($lang, $soucrecode, $input, $output)
-        if component->data->input == testModuleList->input
-        if component->data->output == testModuleList->output
-        $componentList[] = $component;
+        if (component->data->input === testModuleList->input) &&
+           (component->data->output === testModuleList->output)
+        {
+            $componentList[] = $component;
+        }
     }
     return $componentList
 }
