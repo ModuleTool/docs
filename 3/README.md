@@ -156,27 +156,41 @@ User can work on terminal with command line and markdown editor for documentatio
 
 ```php
 
-DataModel function testComponent(DataModel $input) {
-    return DataModel $output;
+$dataModuleList = [];
+$valueList = [];
+$codeList = [];
+
+foreach(){
+    $test_input = get_from_file("")
+    $test_output = get_from_file("")
+    $test_code = get_from_file("")
+    iteration(DataModel $test_input, DataModel $test_output, $test_code);
 }
 
-bool function testDataOuptut(DataModel $test_output, DataModel $real_output){
-    throw Exception('NotEqual')
-    return true
-}
-
-
-try{
-    // data preparation
-    $test_input = new DataModel(type,value)
-    $test_output = new DataModel(type,value)
-    // test component    
-    $real_output = testComponent($test_input)
-    // test output
-    testDataOuptut($test_output, $real_output)
-}catch e {
-    // logs messages
-    new Logs(serialize($test_input), serialize($test_output), serialize(testComponent), str($e->getMessage()))
+function iteration(DataModel $test_input, DataModel $test_output, $test_code)
+{
+    DataModel function testComponent(DataModel $input) {
+        return DataModel $output;
+    }
+    
+    bool function testDataOuptut(DataModel $test_output, DataModel $real_output){
+        throw Exception('NotEqual')
+        return true
+    }
+    
+    try{
+        // data preparation
+        $test_input = new DataModel(type,value)
+        $test_output = new DataModel(type,value)
+        // test component
+        
+        $real_output = testComponent($test_code, $test_input)
+        // test output
+        testDataOuptut($test_output, $real_output)
+    }catch e {
+        // logs messages
+        new Logs(serialize($test_input), serialize($test_output), serialize(testComponent), str($e->getMessage()))
+    }
 }
 ```
 
