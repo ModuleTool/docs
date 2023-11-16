@@ -1,11 +1,69 @@
 # ModuleTool Implementation
 
 
+How to build and develop complex applications in the form of a network of managed services at the DNS level?
+
+
+The idea is to have an automation layer to create tested services. (AI/ML is not able to make it so efficient)
+The important thing about this solution is to focus on the format and type of input and output data and only then on the component itself.
+This makes reuse possible, since the interface must be standardized, just as we do in APIs, but here we operate on the object form first.
+
+
+Hypermodular solutions are using component-based architecture to create working service. In the current state of the project, I am implementing a simple SQL database to show with simple examples how we can build a web application based on open source code and/or chatgpt generated code. it's not about creating one service, but an entire ecosystem on DNS in automation way. Here's a little more on: 
+
++ Tool for managing service-based components 
+
+
+it sounds like, just microservice provides an endpoint via a protocol. Hypermodularity is a way of creating an ecosystem of services, a network map of all components.
+
+
+## How it works
+
+in one sentence:  If We: Define Expectation - > Requirements -> Data Type Definition -> Prepare Example Data Values for Test purpose  ===> We can looking for existing Component OR generate him ===> Start with Stage: prototyping & after Successful Deployment -> Checking  expected data -> IF data on Output are correct Go to the stage: Test if not go to the Stage=prototyping ....
+
+
+
+### Interface
+
+User can work on terminal with command line and markdown editor for documentation purposes
++ markdown documentation for Model Data describing
++ markdown for Expactation and requirement description with examples Data on Data model with values
+
+### Data, SQL DB
+
++ TestData
+    + DataModel
+    + DataValue
+
+### Sourcecode
+
++ Logic
+    + Component
+    + Environment
+
+### Test Iteration
+
+
+### Environment, Infrasttructure
+
+
+
+### Production Iteration
+
+
+
+### Tools:
+
++ planShell
++ plainEdit
+
+
+
 ## DB structure
 
-This diagram uses classDiagram to provide a visual representation of your data model and the relationships between entities. Each class has its attributes listed and relationships are represented by lines with varying types of connectors to indicate the nature of the relationship (e.g., composition, association).
-
 ![db_structure3](/db_structure3.png)
+
+
 
 
 ### Specification
