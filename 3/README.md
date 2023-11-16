@@ -155,22 +155,46 @@ User can work on terminal with command line and markdown editor for documentatio
 
 
 ```php
+$moduleList = []; // from files
+$testModuleList = []; // from Readme
+$codeList = []; // from files
 
-$dataModuleList = [];
-$valueList = [];
-$codeList = [];
-
-foreach(){
-    $test_input = get_from_file("")
-    $test_output = get_from_file("")
-    $test_code = get_from_file("")
-    iteration(DataModel $test_input, DataModel $test_output, $test_code);
+// select component by DataModule
+array findComponentByDataModule(codeList, testModuleList){
+    $sourcecodeList = [];
+    foreach(){
+        
+        $component = new Component($lang, $soucrecode, $input, $output)
+        if component->data->input == testModuleList->input
+        if component->data->output == testModuleList->output
+        $componentList[] = $component;
+    }
+    return $componentList
 }
 
-function iteration(DataModel $test_input, DataModel $test_output, $test_code)
+// test selected component
+foreach(componentList as $component){
+    $test_input = get_from_file("")
+    $test_output = get_from_file("")
+    
+    iteration(DataModel $test_input, DataModel $test_output, $component);
+}
+
+function iteration(DataModel $test_input, DataModel $test_output, $component)
 {
-    DataModel function testComponent(DataModel $input) {
-        return DataModel $output;
+    DataModel function testComponent(DataModel $input, Component $component) {
+        $component->language;
+        $component->sourcecode;
+        $component->input = $input;
+        try{
+            $result = new runComponent($component);
+            new Logs(serialize($test_input), serialize($test_output), serialize(testComponent), str($e->getMessage()))
+            return DataModel $result->output;
+        }catch e {
+            // logs Component messages
+            new Logs(serialize($test_input), serialize($test_output), serialize(testComponent), str($e->getMessage()))
+        }
+        return DataModel(); // empty, error logs
     }
     
     bool function testDataOuptut(DataModel $test_output, DataModel $real_output){
@@ -182,13 +206,12 @@ function iteration(DataModel $test_input, DataModel $test_output, $test_code)
         // data preparation
         $test_input = new DataModel(type,value)
         $test_output = new DataModel(type,value)
-        // test component
-        
-        $real_output = testComponent($test_code, $test_input)
+        // test component        
+        $real_output = testComponent($component, $test_input)
         // test output
         testDataOuptut($test_output, $real_output)
     }catch e {
-        // logs messages
+        // logs Data messages
         new Logs(serialize($test_input), serialize($test_output), serialize(testComponent), str($e->getMessage()))
     }
 }
